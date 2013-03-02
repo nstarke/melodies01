@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Melodies 01 - nickstarke.com</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="lib/Audiolet.min.js"></script>
+        <script src="lib/music.js"></script>
+        <script src="melodies-01.js"></script>
+    </head>
+    <body>
+        <h1>Melodies - 01</h1>
+        <h2>This will only work with the Web Audio API enabled</h2>
+       
+        <h3>Go to "about:flags" in chrome to enable the Web Audio API</h3>
+        
+         <h3>You will also need a really fast computer to avoid overload problems.</h3>
+        <input type="button" id="play" value="Play" /> <input type="button" id="stop" value="Stop" />
+        <p><a href="/">Home</a></p>
+        <script>
+        var melodies;
+        	$(function(){
+        		$('#stop').hide();
+        		$('#play').on('click', function(){
+        			$('#stop').show();
+        			$('#play').hide();
+        			melodies = new Melodies01();
+        			//melodies.play();
+        		});
+        		$('#stop').on('click', function(){
+        			$('#play').show();
+        			$('#stop').hide();
+        			window.location.reload();
+        		});
+        	});
+        </script>
+    </body>
+</html>
